@@ -12,13 +12,13 @@ import {
   ImageBackground,
 } from 'react-native';
 import {COLORS, FONTS} from './helpers/colors';
-import BigGameHomeScreen from './pages/BigGameHomeScreen';
-import BigGameCartScreen from './pages/BigGameCartScreen';
-import BigGameCartSuccessScreen from './pages/BigGameCartSuccessScreen';
-import BigGameReservationScreen from './pages/BigGameReservationScreen';
-import BigGameReservationSuccessScreen from './pages/BigGameReserveSuccessScreen';
-import BigGameContactsScreen from './pages/BigGameContactsScreen';
-import BigGameTranslationsScreen from './pages/BigGameTranslationsScreen';
+import BleacherBarHomeScreen from './pages/BleacherBarHomeScreen';
+import BleacherBarCartScreen from './pages/BleacherBarCartScreen';
+import BleacherBarCartSuccessScreen from './pages/BleacherBarCartSuccessScreen';
+import BleacherBarReservationScreen from './pages/BleacherBarReservationScreen';
+import BleacherBarReservationSuccessScreen from './pages/BleacherBarReserveSuccessScreen';
+import BleacherBarContactsScreen from './pages/BleacherBarContactsScreen';
+import BleacherBarTranslationsScreen from './pages/BleacherBarTranslationsScreen';
 import CloseIcon from './assets/close_icon.png';
 import CartIcon from './assets/cart_icon.png';
 import Logo from './assets/logo.png';
@@ -61,10 +61,10 @@ function CustomDrawerContent(props) {
   const navigation = useNavigation();
 
   const drawerItems = [
-    {label: 'МЕНЮ', screen: 'BigGameHomeScreen'},
-    {label: 'ТРАНСЛЯЦИИ', screen: 'BigGameTranslationsScreen'},
-    {label: 'КОНТАКТЫ', screen: 'BigGameContactsScreen'},
-    {label: 'БРОНЬ СТОЛИКА', screen: 'BigGameReservationScreen'},
+    {label: 'МЕНЮ', screen: 'BleacherBarHomeScreen'},
+    {label: 'ТРАНСЛЯЦИИ', screen: 'BleacherBarTranslationsScreen'},
+    {label: 'КОНТАКТЫ', screen: 'BleacherBarContactsScreen'},
+    {label: 'БРОНЬ СТОЛИКА', screen: 'BleacherBarReservationScreen'},
   ];
 
   const navigateToScreen = screen => {
@@ -92,7 +92,7 @@ function CustomDrawerContent(props) {
           </TouchableOpacity>
         ))}
       </View>
-      <TouchableOpacity onPress={() => navigateToScreen('BigGameCartScreen')}>
+      <TouchableOpacity onPress={() => navigateToScreen('BleacherBarCartScreen')}>
         <Image source={CartIcon} style={styles.cartIcon} />
       </TouchableOpacity>
     </ImageBackground>
@@ -100,24 +100,24 @@ function CustomDrawerContent(props) {
 }
 
 const drawerScreens = [
-  {name: 'BigGameHomeScreen', component: BigGameHomeScreen},
-  {name: 'BigGameCartScreen', component: BigGameCartScreen},
+  {name: 'BleacherBarHomeScreen', component: BleacherBarHomeScreen},
+  {name: 'BleacherBarCartScreen', component: BleacherBarCartScreen},
   {
-    name: 'BigGameCartSuccessScreen',
-    component: BigGameCartSuccessScreen,
+    name: 'BleacherBarCartSuccessScreen',
+    component: BleacherBarCartSuccessScreen,
   },
   {
-    name: 'BigGameReservationScreen',
-    component: BigGameReservationScreen,
+    name: 'BleacherBarReservationScreen',
+    component: BleacherBarReservationScreen,
   },
   {
-    name: 'BigGameReservationSuccessScreen',
-    component: BigGameReservationSuccessScreen,
+    name: 'BleacherBarReservationSuccessScreen',
+    component: BleacherBarReservationSuccessScreen,
   },
-  {name: 'BigGameContactsScreen', component: BigGameContactsScreen},
+  {name: 'BleacherBarContactsScreen', component: BleacherBarContactsScreen},
   {
-    name: 'BigGameTranslationsScreen',
-    component: BigGameTranslationsScreen,
+    name: 'BleacherBarTranslationsScreen',
+    component: BleacherBarTranslationsScreen,
   },
 ];
 

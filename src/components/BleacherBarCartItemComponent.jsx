@@ -3,9 +3,9 @@ import {View, StyleSheet, Text, TouchableOpacity, Image} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {AppContext} from './AppContext';
 import {COLORS, FONTS, width} from '../helpers/colors';
-import {frenchCuisineApp3} from '../assets/products';
+import {burgerApp3} from '../assets/products';
 
-const BigGameCartItemComponent = ({item}) => {
+const BleacherBarCartItemComponent = ({item}) => {
   const {shouldRefresh, toggleRefresh} = useContext(AppContext);
   const [carts, setCarts] = useState([]);
 
@@ -49,7 +49,7 @@ const BigGameCartItemComponent = ({item}) => {
     fetchCartItems();
   }, [shouldRefresh]);
 
-  const productImage = frenchCuisineApp3.find(p => p.name === item.name)?.image;
+  const productImage = burgerApp3.find(p => p.name === item.name)?.image;
 
   return (
     <View style={styles.container}>
@@ -177,4 +177,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default BigGameCartItemComponent;
+export default BleacherBarCartItemComponent;

@@ -9,15 +9,15 @@ import {
 } from 'react-native';
 import {COLORS, FONTS, height, width} from '../helpers/colors';
 import {useNavigation} from '@react-navigation/native';
-import BigGameHeader from '../components/BigGameHeader';
-import BigGameComponent from '../components/BigGameComponent';
+import BleacherBarHeader from '../components/BleacherBarHeader';
+import BleacherBarComponent from '../components/BleacherBarComponent';
 import BackgroundImage from '../assets/background.png';
 
 export default function () {
   const navigation = useNavigation();
 
   const handleNavigateHome = () => {
-    navigation.navigate('DrawerNavigator', {screen: 'BigGameHomeScreen'});
+    navigation.navigate('DrawerNavigator', {screen: 'BleacherBarHomeScreen'});
   };
 
   const renderTextInput = placeholder => (
@@ -33,7 +33,7 @@ export default function () {
 
   return (
     <ImageBackground source={BackgroundImage} style={styles.container}>
-      <BigGameHeader />
+      <BleacherBarHeader />
 
       <Text style={styles.title}>Контакты</Text>
 
@@ -43,7 +43,7 @@ export default function () {
         {renderTextInput('Данные')}
         {renderTextInput('Индекс')}
 
-        <BigGameComponent
+        <BleacherBarComponent
           text="На главную"
           style={styles.button}
           onPress={handleNavigateHome}

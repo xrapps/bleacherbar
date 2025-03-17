@@ -9,9 +9,9 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {AppContext} from '../components/AppContext';
-import BigGameCartItemComponent from '../components/BigGameCartItemComponent';
-import BigGameComponent from '../components/BigGameComponent';
-import BigGameHeader from '../components/BigGameHeader';
+import BleacherBarCartItemComponent from '../components/BleacherBarCartItemComponent';
+import BleacherBarComponent from '../components/BleacherBarComponent';
+import BleacherBarHeader from '../components/BleacherBarHeader';
 import {COLORS, FONTS, height, width} from '../helpers/colors';
 import BackgroundImage from '../assets/background.png';
 
@@ -40,8 +40,8 @@ export default function () {
 
   const handleOrder = () => {
     const destinationScreen = cart.length
-      ? 'BigGameCartSuccessScreen'
-      : 'BigGameHomeScreen';
+      ? 'BleacherBarCartSuccessScreen'
+      : 'BleacherBarHomeScreen';
     navigation.navigate('DrawerNavigator', {screen: destinationScreen});
     AsyncStorage.setItem('cartList', JSON.stringify([]));
     toggleRefresh(!shouldRefresh);
@@ -49,7 +49,7 @@ export default function () {
 
   return (
     <ImageBackground source={BackgroundImage} style={styles.container}>
-      <BigGameHeader />
+      <BleacherBarHeader />
 
       {!cart.length && (
         <>
@@ -62,7 +62,7 @@ export default function () {
           <View style={{height: height * 0.7}}>
             <ScrollView style={styles.flex} contentContainerStyle={styles.main}>
               {cart.map((item, index) => (
-                <BigGameCartItemComponent item={item} key={index} />
+                <BleacherBarCartItemComponent item={item} key={index} />
               ))}
             </ScrollView>
           </View>
@@ -78,7 +78,7 @@ export default function () {
         ''
       )}
 
-      <BigGameComponent
+      <BleacherBarComponent
         text={cart.length ? `ЗАКАЗАТЬ` : 'На главную'}
         style={styles.orderButton}
         onPress={handleOrder}

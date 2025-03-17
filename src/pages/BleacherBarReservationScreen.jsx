@@ -8,8 +8,8 @@ import {
 } from 'react-native';
 import {COLORS, FONTS, height, width} from '../helpers/colors';
 import {useNavigation} from '@react-navigation/native';
-import BigGameHeader from '../components/BigGameHeader';
-import BigGameComponent from '../components/BigGameComponent';
+import BleacherBarHeader from '../components/BleacherBarHeader';
+import BleacherBarComponent from '../components/BleacherBarComponent';
 import BackgroundImage from '../assets/background.png';
 
 const InputField = ({placeholder, value, onChangeText}) => (
@@ -42,13 +42,13 @@ export default function () {
 
   const handleReservation = () => {
     navigation.navigate('DrawerNavigator', {
-      screen: 'BigGameReservationSuccessScreen',
+      screen: 'BleacherBarReservationSuccessScreen',
     });
   };
 
   return (
     <ImageBackground source={BackgroundImage} style={styles.container}>
-      <BigGameHeader />
+      <BleacherBarHeader />
 
       <Text style={styles.title}>Резерв столика</Text>
 
@@ -83,7 +83,7 @@ export default function () {
           onChangeText={text => handleInputChange('date', text)}
         />
 
-        <BigGameComponent
+        <BleacherBarComponent
           text={'Зарезервировать'}
           style={styles.button}
           onPress={handleReservation}

@@ -1,21 +1,21 @@
 import React from 'react';
 import {StyleSheet, ImageBackground, FlatList, Text} from 'react-native';
-import BigGameHeader from '../components/BigGameHeader';
-import BigGameMenuComponent from '../components/BigGameMenuComponent';
+import BleacherBarHeader from '../components/BleacherBarHeader';
+import BleacherBarMenuComponent from '../components/BleacherBarMenuComponent';
 import {COLORS, FONTS, height, width} from '../helpers/colors';
-import {frenchCuisineApp3} from '../assets/products';
+import {burgerApp3} from '../assets/products';
 import BackgroundImage from '../assets/background.png';
 
 export default function () {
-  const renderProduct = ({item}) => <BigGameMenuComponent item={item} />;
+  const renderProduct = ({item}) => <BleacherBarMenuComponent item={item} />;
   return (
     <ImageBackground source={BackgroundImage} style={styles.container}>
-      <BigGameHeader />
+      <BleacherBarHeader />
 
       <Text style={styles.title}>Меню</Text>
 
       <FlatList
-        data={frenchCuisineApp3}
+        data={burgerApp3}
         renderItem={renderProduct}
         keyExtractor={(item, index) => index.toString()}
         contentContainerStyle={styles.main}

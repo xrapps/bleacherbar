@@ -10,20 +10,20 @@ import {
 import {COLORS, FONTS, height, width} from '../helpers/colors';
 import QRCode from 'react-native-qrcode-svg';
 import {useNavigation} from '@react-navigation/native';
-import BigGameHeader from '../components/BigGameHeader';
-import BigGameComponent from '../components/BigGameComponent';
+import BleacherBarHeader from '../components/BleacherBarHeader';
+import BleacherBarComponent from '../components/BleacherBarComponent';
 import BackgroundImage from '../assets/background.png';
 
 export default function () {
   const navigation = useNavigation();
 
   const handleNavigateHome = () => {
-    navigation.navigate('DrawerNavigator', {screen: 'BigGameHomeScreen'});
+    navigation.navigate('DrawerNavigator', {screen: 'BleacherBarHomeScreen'});
   };
 
   return (
     <ImageBackground source={BackgroundImage} style={styles.container}>
-      <BigGameHeader />
+      <BleacherBarHeader />
 
       <Image
         source={require('../assets/success_icon.png')}
@@ -40,7 +40,7 @@ export default function () {
         />
       </View>
 
-      <BigGameComponent
+      <BleacherBarComponent
         text="На главную"
         style={styles.button}
         onPress={handleNavigateHome}

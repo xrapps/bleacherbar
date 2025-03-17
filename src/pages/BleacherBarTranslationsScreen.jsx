@@ -7,7 +7,7 @@ import {
   ImageBackground,
 } from 'react-native';
 import {COLORS, FONTS, height, width} from '../helpers/colors';
-import BigGameHeader from '../components/BigGameHeader';
+import BleacherBarHeader from '../components/BleacherBarHeader';
 import BackgroundImage from '../assets/background.png';
 
 export default function () {
@@ -25,59 +25,23 @@ export default function () {
 
   return (
     <ImageBackground source={BackgroundImage} style={styles.container}>
-      <BigGameHeader />
+      <BleacherBarHeader />
 
       <Text style={styles.title}>Трансляции</Text>
 
       <ScrollView
         style={{flex: 1}}
         contentContainerStyle={{paddingBottom: 100, marginTop: 15}}>
-        {renderBroadcast(
-          'NBA Playoffs',
-          '01.05 21:00',
-          'Golden State Warriors \n' + 'Denver Nuggets',
-        )}
-        {renderBroadcast(
-          'EuroLeague',
-          '03.05 19:30',
-          'Real Madrid \n' + 'Fenerbahçe',
-        )}
-        {renderBroadcast(
-          'ACB Liga',
-          '05.05 18:00',
-          'Barcelona \n' + 'Valencia',
-        )}
-        {renderBroadcast(
-          'CBA Finals',
-          '07.05 20:15',
-          'Beijing Ducks \n' + 'Guangdong Tigers',
-        )}
-        {renderBroadcast('NCAA Final', '09.05 22:00', 'Duke \n' + 'Gonzaga')}
-        {renderBroadcast(
-          'PBA',
-          '11.05 17:45',
-          'San Miguel Beermen \n' + 'Magnolia Hotshots',
-        )}
-        {renderBroadcast(
-          'Australian',
-          '13.05 19:00',
-          'Sydney Kings \n' + 'Perth Wildcats',
-        )}
-        {renderBroadcast(
-          'WNBA',
-          '15.05 20:30',
-          'Las Vegas Aces \n' + 'Chicago Sky',
-        )}
-        {renderBroadcast(
-          'ABA League',
-          '17.05 18:30',
-          'Partizan \n' + 'Crvena Zvezda',
-        )}
-        {renderBroadcast(
-          'BSL Turkey',
-          '19.05 16:15',
-          'Anadolu Efes \n' + 'Galatasaray',
-        )}
+        {renderBroadcast('NHL', '03.04 19:00', 'Montreal Canadiens \n' + 'Toronto Maple Leafs')}
+        {renderBroadcast('KHL', '06.04 21:30', 'CSKA Moscow \n' + 'SKA St. Petersburg')}
+        {renderBroadcast('SHL', '09.04 18:00', 'Färjestad \n' + 'Frölunda')}
+        {renderBroadcast('Liiga', '12.04 20:45', 'HIFK \n' + 'Tappara')}
+        {renderBroadcast('DEL', '15.04 23:15', 'Eisbären Berlin \n' + 'Adler Mannheim')}
+        {renderBroadcast('NLA', '18.04 17:30', 'ZSC Lions \n' + 'HC Lugano')}
+        {renderBroadcast('Extraliga', '21.04 16:15', 'HC Pardubice \n' + 'HC Sparta Praha')}
+        {renderBroadcast('EIHL', '24.04 19:45', 'Belfast Giants \n' + 'Cardiff Devils')}
+        {renderBroadcast('IIHF', '27.04 22:00', 'Canada \n' + 'Sweden')}
+        {renderBroadcast('CHL', '30.04 20:00', 'London Knights \n' + 'Windsor Spitfires')}
       </ScrollView>
     </ImageBackground>
   );

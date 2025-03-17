@@ -18,7 +18,7 @@ export default function ({back = false}) {
       <Image source={Logo} style={styles.logo} />
 
       <TouchableOpacity
-        onPress={() => navigation.navigate('BigGameCartScreen')}>
+        onPress={() => navigation.navigate('BleacherBarCartScreen')}>
         <Image source={Cart} style={styles.image} />
       </TouchableOpacity>
     </View>
